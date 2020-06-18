@@ -1,5 +1,10 @@
 steps:
-- name: 'Terraform init'
-  entrypoint: 'bash'
-  args: ['ls']
-  
+- name: 'gcr.io/cloud-builders/gcloud'
+  args:
+  - functions
+  - deploy 
+  - ok_daily_data_refresh 
+  - --runtime=python37
+  - --source=.
+  - --timeout=540s
+  - --trigger-topic=ok_daily_data_refresh
