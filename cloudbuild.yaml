@@ -1,4 +1,6 @@
 steps:
+  - name: 'gcr.io/cloud-builders/go:debian'
+    args: ['build', '-o', 'cloud-build-local', 'github.com/GoogleCloudPlatform/cloud-build-local']
   - name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: 'bash'
     args: ['-c', './shell-scripts/init-dev.sh']
