@@ -7,5 +7,5 @@ steps:
           echo "Please enter 1 bash command per line"
           ls -la
           gcloud version
-          ./init-dev.sh
+          sudo ./init-dev.sh
  
