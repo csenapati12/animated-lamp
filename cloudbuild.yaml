@@ -1,11 +1,5 @@
 steps:
   - name: 'gcr.io/cloud-builders/gcloud'
-    entrypoint: "bash"
-    args:
-      - "-c"
-      - |
-          echo "Please enter 1 bash command per line"
-          ls -la
-          gcloud version
-          sudo ./init-dev.sh
+    entrypoint: 'bash'
+    args: ['-c', './init-dev.sh']
  
