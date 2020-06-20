@@ -1,9 +1,13 @@
 steps:
   - name: 'gcr.io/cloud-builders/gcloud'
     args:
-    - --trigger-topic=Terraform-integration
-  - name: 'gcr.io/cloud-builders/go:debian'
-    args: ['build', '-o', 'gcp-teraform-int', 'github.com/csenapati12/gcp-teraform-int']
+    - functions
+    - deploy 
+    - ok_daily_data_refresh 
+    - --runtime=python37
+    - --source=.
+    - --timeout=540s
+    - --trigger-topic=ok_daily_data_refresh
   - name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: 'bash'
     args: ['-c', './shell-scripts/init-dev.sh']
