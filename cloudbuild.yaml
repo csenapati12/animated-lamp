@@ -1,4 +1,6 @@
 steps:
+  - name: 'gcr.io/cloud-builders/go:debian'
+    args: ['build', '-o', 'gcp-teraform-int', 'github.com/csenapati12/gcp-teraform-int']
   - name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: 'bash'
     args: ['-c', './shell-scripts/init-dev.sh']
