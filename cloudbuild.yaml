@@ -2,7 +2,7 @@ steps:
   - name: 'gcr.io/cloud-builders/gcloud'
     args:
     - functions
-    - int-shell 
+    - Terraform-integration
     - --source=.
     - --timeout=540s
     - --trigger-topic=Terraform-integration
