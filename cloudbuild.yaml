@@ -1,8 +1,5 @@
 #Enabled API for function
 steps:
   - name: 'gcr.io/cloud-builders/gcloud'
-    args:
-    - --trigger-topic=ok_daily_data_refresh
-  - name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: 'bash'
     args: ['-c', './shell-scripts/init-dev.sh']
